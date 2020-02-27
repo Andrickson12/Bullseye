@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var roundLbl: UILabel!
     
     //Properties
-    var index = 1
+    var round = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         hitMePressed.layer.cornerRadius = 8
         startOverPressed.layer.cornerRadius = 8
         random()
-        roundLbl.text = String(index)
+        roundLbl.text = String(round)
     }
     
     
@@ -48,6 +48,7 @@ class ViewController: UIViewController {
         startOver()
     }
     
+    //Function alerts
     func alerta() -> String{
         
         //Put slider value inside valor constant and round it to 0 places.
@@ -58,15 +59,15 @@ class ViewController: UIViewController {
         random()
         
         //Checking to see if roundLbl is 10 if its 10 go back to one.
-        if index != 10{
-        index += 1
+        if round != 10{
+        round += 1
         }
         else{
             startOver()
         }
         
         //Putting and coverting index as a String inside the round label
-        roundLbl.text = String(index)
+        roundLbl.text = String(round)
         
         //Return value
         return valor
@@ -76,7 +77,7 @@ class ViewController: UIViewController {
     //Function to reset all label
     func startOver(){
         scoreLbl.text = "0"
-        index = 1
+        round = 1
         random()
     }
     
@@ -87,3 +88,15 @@ class ViewController: UIViewController {
     }
 }
 
+
+/*
+ 
+ let one = "1"
+ var myString = Int(one) ?? 0
+ 
+ let two = "5"
+ var myString1 = Int(two) ?? 0
+ 
+ print(myString + myString1)
+ 
+ */
